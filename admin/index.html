@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редактор</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation"><a href="/">Главная</a></li>
+                <li role="presentation"  class="active"><a href="/admin/index.html">Редактор</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Редактор</h3>
+    </div>
+
+    <div class="row" id="main">
+        <div class="col-sm-6 col_block">
+            <h3>Публичная часть</h3>
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Имя файла</th>
+                    <th>Размер</th>
+                    <th>Опции</th>
+                </tr>
+                </thead>
+                <tbody id="list_http">
+
+                </tbody>
+            </table>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 100%"></div>
+            </div>
+        </div>
+        <div class="col-sm-6  col_block">
+            <h3>Админская часть</h3>
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Имя файла</th>
+                    <th>Размер</th>
+                    <th>Опции</th>
+                </tr>
+                </thead>
+                <tbody id="list_admin">
+                </tbody>
+            </table>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width: 100%"></div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-info" id="new-file" style="margin: 15px 0;">Новый файл</button>
+        </div>
+        <div class="col-xs-12" id="edit-area">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Имя файла:
+                    <input type="text" class="form-control" id="file_name">
+                    Тип:
+                    <select  class="form-control" id="file_type">
+                        <option value="http">HTTP</option>
+                        <option value="admin">ADMIN</option>
+                    </select>
+                    <div id="file_content" style="height: 300px; margin: 15px 0"></div>
+                    <button type="button" class="btn btn-info" id="save_document">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+
+<script src="/admin/js.js"></script>
+</body>
+</html>
+
