@@ -18,7 +18,7 @@ wifiConfig.accessPointIpConfig.gateway = "192.168.111.1"
 
 wifiConfig.stationPointConfig = {}
 wifiConfig.stationPointConfig.ssid = "Kirill"        -- Name of the WiFi network you want to join
-wifiConfig.stationPointConfig.pwd =  ""                -- Password for the WiFi network
+wifiConfig.stationPointConfig.pwd =  "katerina25"                -- Password for the WiFi network
 
 -- Tell the chip to connect to the access point
 

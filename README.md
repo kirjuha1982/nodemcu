@@ -167,5 +167,3 @@ Let the abuse begin.
    * Any help reducing the memory needs of the server without crippling its functionality is appreciated!
    * Compile your Lua scripts in order to reduce their memory usage. The server knows to serve and treat
    both .lua and .lc files as scripts.
-# nodemcu
-# nodemcu

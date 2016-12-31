@@ -4,7 +4,7 @@ return function (connection, req, args)
     ws2812.init();
 
     local buffer = ws2812.newBuffer(_G.leds, 3);
-
+    ws2812.write(string.char(0, 0, 255):rep(10))
     for i = 1, _G.leds do
         if i < _G.leds/2 then
             buffer:set(i,120, 210, 1);
@@ -14,8 +14,6 @@ return function (connection, req, args)
     end
     buffer = wsFunction.powBuffer(buffer, args);
     ws2812.write(buffer);
-    connection:send("<h2>Ok</h2>");
-
+    connection:send(":-)");
     collectgarbage();
 end
---[[b, r, g]]

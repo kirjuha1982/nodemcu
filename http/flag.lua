@@ -1,5 +1,6 @@
 return function (connection, req, args)
     dofile("http/functions.lc")
+
     tmr.alarm(1, 1, 0, function()  end )
     ws2812.init();
 
@@ -13,28 +14,9 @@ return function (connection, req, args)
         else
             buffer:set(i,127,127,127);
         end
-
     end
-
-    local blink = 0;
-
-
-    for name, value in pairs(args) do
-        if name == "blink" then
-            blink = tonumber(value);
-        end
-
-    end
-
-
     buffer = wsFunction.powBuffer(buffer, args);
-
-
-
     ws2812.write(buffer);
-
-    connection:send("<h2>Ok</h2>");
-
-
+    connection:send(":-)");
     collectgarbage();
 end

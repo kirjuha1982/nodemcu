@@ -16,7 +16,7 @@ return function (connection, req, args)
     end )
 
 
-    connection:send("<h2>Ok</h2>");
+    connection:send(":-)");
 
     collectgarbage()
 end

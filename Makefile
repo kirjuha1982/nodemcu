@@ -12,7 +12,6 @@ SPEED=115200
 # End of user config
 ######################################################################
 HTTP_FILES := $(wildcard http/*)
-ADMIN_FILES := $(wildcard admin/*)
 LUA_FILES := \
    init.lua \
    httpserver.lua \
@@ -29,7 +28,6 @@ LUA_FILES := \
 usage:
 	@echo "make upload FILE:=<file>  to upload a specific file (i.e make upload FILE:=init.lua)"
 	@echo "make upload_http          to upload files to be served"
-	@echo "make upload_admin          to upload admin files to be served"
 	@echo "make upload_server        to upload the server code and init.lua"
 	@echo "make upload_all           to upload all"
 	@echo $(TEST)
@@ -42,17 +40,11 @@ upload:
 upload_http: $(HTTP_FILES)
 	@python $(NODEMCU-UPLOADER) -b $(SPEED) -p $(PORT) upload $(foreach f, $^, $(f))
 
-
-# Upload ADMIN files only
-upload_admin: $(ADMIN_FILES)
-	@python $(NODEMCU-UPLOADER) -b $(SPEED) -p $(PORT) upload $(foreach f, $^, $(f))
-
-
 # Upload httpserver lua files (init and server module)
 upload_server: $(LUA_FILES)
 	@python $(NODEMCU-UPLOADER) -b $(SPEED) -p $(PORT) upload $(foreach f, $^, $(f))
 
 # Upload all
-upload_all: $(LUA_FILES) $(HTTP_FILES) $(ADMIN_FILES)
+upload_all: $(LUA_FILES) $(HTTP_FILES)
 	@python $(NODEMCU-UPLOADER) -b $(SPEED) -p $(PORT) upload $(foreach f, $^, $(f))
 

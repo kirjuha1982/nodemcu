@@ -15,6 +15,7 @@ function wsFunction.powBuffer(buffer, args)
             buffer:mix(256 * led_sum / p, buffer) -- power is now limited
         end
     end
+    collectgarbage()
     return buffer;
 end
 
@@ -76,7 +77,7 @@ function wsFunction.nextColor(delimiter, r, g, b)
     color.r = r;
     color.g = g;
     color.b = b;
-
+    collectgarbage()
     return color;
 end
 

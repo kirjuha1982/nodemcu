@@ -26,6 +26,6 @@ return function (connection, req, args)
     buffer = wsFunction.powBuffer(buffer, args);
     ws2812.write(buffer);
 
-    connection:send("1");
+    connection:send(":-)");
     collectgarbage();
 end

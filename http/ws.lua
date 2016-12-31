@@ -87,7 +87,7 @@ ws2812.init();
        end )]]
 
 
-    connection:send("<h2>Ok</h2>");
+    connection:send(":-)");
 
     --[[local pin = 5
     local status, temp, humi, temp_dec, humi_dec = dht.read(pin)
